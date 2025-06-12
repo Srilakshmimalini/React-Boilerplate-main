@@ -74,12 +74,3 @@ You can log in using the following **mock user credentials** defined in the fron
 | `postcss`, `autoprefixer` | Required by Tailwind CSS                 |
 | `@vitejs/plugin-react` | React support in Vite                       |
 
----
-
-## 📦 Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/Srilakshmimalini/React-Boilerplate-main.git
-cd React-Boilerplate-main
