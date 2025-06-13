@@ -9,10 +9,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-<<<<<<< HEAD
   "include": ["src/**/*", "common"],
-=======
-  "include": ["src/**/*"],
->>>>>>> 1f60df4f805ce2703cf624d1fcb286868e98a636
   "exclude": ["node_modules"]
 }
