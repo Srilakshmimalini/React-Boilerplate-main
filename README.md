@@ -57,16 +57,6 @@ You can log in using the following **mock user credentials** defined in the fron
 
 ---
 
-## 🛠️ Dashboard Layout (✅ Today's Update)
-
-| Component     | Description                                           |
-|---------------|-------------------------------------------------------|
-| 🔝 Navbar      | Top navigation bar with logo, profile, logout button |
-| 📂 Sidebar     | Collapsible menu with icons for navigation           |
-| 📋 Form Button | Button inside Dashboard to navigate to FormPage      |
-
----
-
 ## 🔒 Authentication Logic
 
 - Frontend-only mock validation
