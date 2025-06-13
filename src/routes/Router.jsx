@@ -1,4 +1,3 @@
-// src/routes/router.jsx
 import { createBrowserRouter } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 
@@ -13,6 +12,8 @@ const About = lazy(() => import('../pages/About'));
 const Login = lazy(() => import('../pages/Login'));
 const Register = lazy(() => import('../pages/Register'));
 const Dashboard = lazy(() => import('../pages/Dashboard'));
+const FormPage = lazy(() => import('../pages/FormPage'));       // ✅ New
+const FormData = lazy(() => import('../pages/FormData'));       // ✅ New
 const ProtectedRoute = lazy(() => import('../components/auth/ProtectedRoute'));
 
 const router = createBrowserRouter([
@@ -60,6 +61,22 @@ const router = createBrowserRouter([
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
+          </Suspense>
+        ),
+      },
+      {
+        path: 'form', // ✅ Form submission page
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <FormPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'form-data', // ✅ Form data table (visualization)
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <FormData />
           </Suspense>
         ),
       },
