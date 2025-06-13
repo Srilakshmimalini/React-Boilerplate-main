@@ -1,4 +1,3 @@
-
 # ⚛️ React + Tailwind Frontend Boilerplate
 
 A responsive and scalable **React frontend boilerplate** built using **Vite**, **Tailwind CSS**, and **React Router**. This project includes a basic layout, reusable components, and mock login/register authentication flow with role-based redirection for **Admin** and **User** roles.
@@ -15,7 +14,9 @@ A responsive and scalable **React frontend boilerplate** built using **Vite**, *
 🔐 **Mock Authentication System** with Admin/User roles  
 🧱 **Protected Dashboard Page** (access-controlled)  
 🌓 **Responsive Design** with light/dark theme support  
-💡 **Clean file structure** for easy scaling  
+📂 **Clean file structure** for scalability  
+🧩 **Reusable Navbar + Sidebar layout** in Dashboard  
+📝 **Dynamic Form Page** accessible from Dashboard
 
 ---
 
@@ -45,13 +46,24 @@ You can log in using the following **mock user credentials** defined in the fron
 
 ## 📄 Pages Included
 
-| Page       | Description                                    |
-|------------|------------------------------------------------|
-| 🏠 Home     | Public homepage with intro                    |
-| ℹ️ About     | Project/about section                         |
-| 🔐 Login    | Mock login with role check                    |
-| 📝 Register | Mock signup (redirects to login)              |
-| 📊 Dashboard| Protected page, accessible after login        |
+| Page        | Description                                        |
+|-------------|----------------------------------------------------|
+| 🏠 Home      | Public homepage with intro                        |
+| ℹ️ About      | Project/about section                             |
+| 🔐 Login     | Mock login with role check                        |
+| 📝 Register  | Mock signup (redirects to login)                  |
+| 📊 Dashboard | Protected page, accessible after login            |
+| 📋 FormPage  | Page with a simple editable form, from Dashboard  |
+
+---
+
+## 🛠️ Dashboard Layout (✅ Today's Update)
+
+| Component     | Description                                           |
+|---------------|-------------------------------------------------------|
+| 🔝 Navbar      | Top navigation bar with logo, profile, logout button |
+| 📂 Sidebar     | Collapsible menu with icons for navigation           |
+| 📋 Form Button | Button inside Dashboard to navigate to FormPage      |
 
 ---
 
@@ -60,6 +72,7 @@ You can log in using the following **mock user credentials** defined in the fron
 - Frontend-only mock validation
 - User role stored in `localStorage`
 - Redirect based on role (`admin` or `user`)
+- Dashboard & FormPage protected via `PrivateRoute`
 - No backend or persistent storage involved
 
 ---
@@ -75,4 +88,19 @@ You can log in using the following **mock user credentials** defined in the fron
 | `postcss`, `autoprefixer` | Required by Tailwind CSS                 |
 | `@vitejs/plugin-react` | React support in Vite                       |
 
->>>>>>> 1f60df4f805ce2703cf624d1fcb286868e98a636
+---
+
+## 🚀 Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/react-boilerplate.git
+
+# Navigate into the project directory
+cd react-boilerplate
+
+# Install dependencies
+npm install
+
+# Run the app
+npm run dev
