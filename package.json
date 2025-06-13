@@ -11,7 +11,10 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+<<<<<<< HEAD
     "axios": "^1.9.0",
+=======
+>>>>>>> 1f60df4f805ce2703cf624d1fcb286868e98a636
     "bootstrap": "^5.3.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

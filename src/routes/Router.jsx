@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+// src/routes/router.jsx
+>>>>>>> 1f60df4f805ce2703cf624d1fcb286868e98a636
 import { createBrowserRouter } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 
@@ -12,8 +16,11 @@ const About = lazy(() => import('../pages/About'));
 const Login = lazy(() => import('../pages/Login'));
 const Register = lazy(() => import('../pages/Register'));
 const Dashboard = lazy(() => import('../pages/Dashboard'));
+<<<<<<< HEAD
 const FormPage = lazy(() => import('../pages/FormPage'));       // ✅ New
 const FormData = lazy(() => import('../pages/FormData'));       // ✅ New
+=======
+>>>>>>> 1f60df4f805ce2703cf624d1fcb286868e98a636
 const ProtectedRoute = lazy(() => import('../components/auth/ProtectedRoute'));
 
 const router = createBrowserRouter([
@@ -65,6 +72,7 @@ const router = createBrowserRouter([
         ),
       },
       {
+<<<<<<< HEAD
         path: 'form', // ✅ Form submission page
         element: (
           <Suspense fallback={<LoadingSpinner />}>
@@ -81,6 +89,8 @@ const router = createBrowserRouter([
         ),
       },
       {
+=======
+>>>>>>> 1f60df4f805ce2703cf624d1fcb286868e98a636
         path: '*',
         element: <ErrorPage />,
       },
