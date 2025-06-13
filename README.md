@@ -2,7 +2,6 @@
 
 A responsive and scalable **React frontend boilerplate** built using **Vite**, **Tailwind CSS**, and **React Router**. This project includes a basic layout, reusable components, and mock login/register authentication flow with role-based redirection for **Admin** and **User** roles.
 
-> 🔗 [Live Demo](https://react-boilerplate-beryl-rho.vercel.app/)
 
 ---
 
