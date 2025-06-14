@@ -1,0 +1,90 @@
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --------------------------------------------------
+   Custom Transitions & Animations
+-------------------------------------------------- */
+.page-enter {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  filter: blur(4px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  transition:
+    opacity 400ms ease-out,
+    transform 400ms ease-out,
+    filter 400ms ease-out;
+}
+.page-exit {
+  opacity: 1;
+}
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(20px) scale(0.97);
+  filter: blur(4px);
+  transition:
+    opacity 300ms ease-in,
+    transform 300ms ease-in,
+    filter 300ms ease-in;
+}
+
+/* --------------------------------------------------
+   Reusable UI Classes (Extend Tailwind)
+-------------------------------------------------- */
+.btn-primary {
+  @apply px-6 py-2 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-primary-dark transition-colors duration-300;
+}
+
+.btn-secondary {
+  @apply px-6 py-2 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary-dark transition-all duration-300;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300;
+}
+
+.section {
+  @apply py-16 px-4 md:px-10 lg:px-24;
+}
+
+.heading {
+  @apply text-4xl font-bold text-primary-dark mb-6;
+}
+
+.paragraph {
+  @apply text-base md:text-lg text-gray-700 dark:text-gray-300;
+}
+
+/* --------------------------------------------------
+   Dark Mode Support
+-------------------------------------------------- */
+html.dark {
+  background-color: #111827;
+  color-scheme: dark;
+}
+
+.dark .bg-primary {
+  background-color: #2563eb;
+}
+.dark .text-primary-dark {
+  color: #93c5fd;
+}
+.dark .card {
+  background-color: #1f2937;
+  color: #e5e7eb;
+}
+
+/* --------------------------------------------------
+   Utilities: Media Queries & Accessibility
+-------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .page-enter-active,
+  .page-exit-active {
+    transition: none !important;
+  }
+}
