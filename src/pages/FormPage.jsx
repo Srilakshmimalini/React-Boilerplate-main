@@ -20,6 +20,8 @@ export default function FormPage() {
     city: '',
   });
 
+  const [selectedState, setSelectedState] = useState('');
+
   const statesWithCities = {
     TamilNadu: ['Chennai', 'Coimbatore', 'Madurai', 'Tirupattur'],
     Maharashtra: ['Mumbai', 'Pune', 'Nagpur'],
@@ -28,8 +30,6 @@ export default function FormPage() {
     Gujarat: ['Ahmedabad', 'Surat', 'Vadodara'],
     AndhraPradesh: ['Vijayawada', 'Visakhapatnam', 'Guntur'],
   };
-
-  const [selectedState, setSelectedState] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -44,7 +44,13 @@ export default function FormPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const existing = JSON.parse(localStorage.getItem('formEntries')) || [];
-    const updated = [...existing, formData];
+
+    const updatedEntry = {
+      ...formData,
+      submittedAt: new Date().toISOString(), // Add submitted time
+    };
+
+    const updated = [...existing, updatedEntry];
     localStorage.setItem('formEntries', JSON.stringify(updated));
     navigate('/form-data');
   };
@@ -122,13 +128,14 @@ export default function FormPage() {
             />
           </div>
 
+          {/* State Selection */}
           <div className="flex items-center gap-2">
             <FaMapMarkerAlt className="text-blue-500" />
             <select
               onChange={handleStateChange}
               value={selectedState}
-              className="w-full px-4 py-2 rounded border bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
               required
+              className="w-full px-4 py-2 rounded border bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
             >
               <option value="">-- Select State --</option>
               {Object.keys(statesWithCities).map((state) => (
@@ -137,6 +144,7 @@ export default function FormPage() {
             </select>
           </div>
 
+          {/* City Selection */}
           {selectedState && (
             <div className="flex items-center gap-2">
               <FaCity className="text-blue-500" />
@@ -155,6 +163,7 @@ export default function FormPage() {
             </div>
           )}
 
+          {/* Submit Button */}
           <button
             type="submit"
             className="bg-blue-600 w-full text-white px-4 py-2 rounded hover:bg-blue-700 transition font-medium tracking-wide"
