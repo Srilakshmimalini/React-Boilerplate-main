@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { FaUser, FaIdBadge, FaCode, FaMapMarkerAlt, FaCity } from 'react-icons/fa';
+import {
+  FaUser,
+  FaIdBadge,
+  FaCode,
+  FaMapMarkerAlt,
+  FaCity,
+  FaCalendarAlt,
+} from 'react-icons/fa';
 
 export default function FormPage() {
   const navigate = useNavigate();
@@ -8,6 +15,7 @@ export default function FormPage() {
     name: '',
     userId: '',
     domain: '',
+    dob: '',
     state: '',
     city: '',
   });
@@ -58,7 +66,9 @@ export default function FormPage() {
           onSubmit={handleSubmit}
           className="bg-white dark:bg-gray-900 p-10 rounded-2xl shadow-2xl space-y-6 w-full max-w-2xl transition-all"
         >
-          <h2 className="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-6">User Details Form</h2>
+          <h2 className="text-3xl font-bold text-center text-blue-600 dark:text-blue-400 mb-6">
+            User Details Form
+          </h2>
 
           <div className="flex items-center gap-2">
             <FaUser className="text-blue-500" />
@@ -93,6 +103,19 @@ export default function FormPage() {
               name="domain"
               placeholder="Domain"
               value={formData.domain}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 rounded border bg-gray-50 dark:bg-gray-800 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+          </div>
+
+          {/* DOB Field */}
+          <div className="flex items-center gap-2">
+            <FaCalendarAlt className="text-blue-500" />
+            <input
+              type="date"
+              name="dob"
+              value={formData.dob}
               onChange={handleChange}
               required
               className="w-full px-4 py-2 rounded border bg-gray-50 dark:bg-gray-800 dark:border-gray-700 focus:ring-2 focus:ring-blue-500 outline-none"
